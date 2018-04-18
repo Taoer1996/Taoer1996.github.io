@@ -1,4 +1,6 @@
-{%- assign _toc_selectors = site.toc.selectors | default: site.data.variables.default.toc.selectors -%}
+<!-- {%- assign _toc_selectors = site.toc.selectors | default: site.data.variables.default.toc.selectors -%} -->
+<!-- 将 _toc_selectors置空，从而去除目录 -->
+{%- assign _toc_selectors = "" -%}
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
 <script>
