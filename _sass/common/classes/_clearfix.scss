@@ -1,0 +1,18 @@
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.has-toc {
+  .clearfix {
+	.site-logo{
+	  margin-left: map-get($layout, aside-width);
+	}
+	.nav-bar{
+	  margin-right: map-get($layout, aside-width);
+	}
+  }
+}
