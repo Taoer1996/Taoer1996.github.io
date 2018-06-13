@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="echarts/echarts.min.js"></script>
+    <script src="echarts/dataTool.min.js"></script>
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="center" id="main" style="width: 1200px;height:800px;"></div>
+    <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    var Datas = ['奥巴马', '年龄', '56', 1, '奥巴马', '妻子', '米歇尔', 0, '奥巴马', '女儿', '玛利亚', 0, '米歇尔', '年龄', '50', 1, '奥巴马', '父亲', '侯赛因', 0, '米歇尔', '丈夫', '奥巴马', 0, '米歇尔', '女儿', '玛利亚', 0, '米歇尔', '父亲', '侯赛因', 0, '玛利亚', '年龄', '20', 1, '玛利亚', '父亲', '奥巴马', 0, '玛利亚', '母亲', '米歇尔', 0, '奥巴马', '星座', '巨蟹座', 1, '奥巴马', '毕业于', '哈佛大学', 0, '奥巴马', '职位', '哈佛大学前任总统', 1, '奥巴马', '国籍', '美国', 0, '侯赛因', '儿子', '奥巴马', 0, '哈佛大学', '位于', '美国', 0, '美国', '前任总统', '奥巴马', 0, '侯赛因', '儿媳', '米歇尔', 0, '特朗普', '年龄', '71', 1, '特朗普', '职位', '现任总统', 1, '安安', '年龄', '15', 1, '奥巴马', '代表作品', '相信变革', 0, '相信变革', '属于', '奥巴马', 0, '奥巴马', '英文名', 'Obama', 1, '米歇尔', '英文名', 'Michelle', 1, '玛利亚', '英文名', 'Malia', 1, '火箭炮', '射程', '5000米', 1, '中国', '邻国', '蒙古', 0, '俄罗斯', '邻国', '蒙古', 0, '普京', '国籍', '俄罗斯', 0, '习大大', '国籍', '中国', 0, '安安', '国籍', '中国', 0, '11111111112', '22', '5000', 1, '11111111112', '55', '5001', 1, '11111111113', '啊', '那你', 1, '111111111123', '88', '5000', 1];
+    //Datas = ['人民军第7军','简介','后方正规军',0  '人民军第7军','隶属国家','朝鲜',0  '人民军第7军','隶属省','咸镜北道',0  '人民军第7军','隶属市','咸于市',0  '人民军第7军','经度','129.4581955',0  '人民军第7军','纬度','41.8148758',0  '人民军第7军','成立时间','xxxx-xx-xx',0  '人民军第7军','现任领导人','艾云峰',0  '人民军第7军','隶属于','人民武装力量部',1  '人民军第7军','隶属于_反','第10步兵师',0  '人民军第7军','隶属于_反','第20步兵师',0  '人民军第7军','隶属于_反','第5新训师',0  '人民军第7军','隶属于_反','第6新训师',0  '人民军第7军','隶属于_反','第7新训师',0  '人民军第7军','隶属于_反','第8新训师',0  '人民军第7军','隶属于_反','第87轻步兵旅',0  '人民军第7军','隶属于_反','第7坦克旅',0  '人民军第7军','隶属于_反','第7 炮兵旅',0  '人民军第7军','隶属于_反','第4火箭炮旅',0  '人民军第7军','隶属于_反','第7防空团',0  '人民军第7军','隶属于_反','第7工兵团',0  '人民军第7军','隶属于_反','反坦克营',0  '人民军第7军','隶属于_反','化学营',0  '人民军第7军','隶属于_反','电讯信号营',0  '人民军第7军','隶属于_反','通讯营',0  '人民武装力量部','外文名称','People"s Armed Forces Department',0  '人民武装力量部','简介','朝鲜民主主义人民共和国人民武装力量部（朝鲜语：조선민주주의인민공화국 인민무력부）简称朝鲜人民武力部，是朝鲜民主主义人民共和国国防委员会统帅朝鲜全国武装力量（包括朝鲜人民军、朝鲜人民内务军和朝鲜工农赤卫军）的下属执行机关，对朝鲜全国的武装力量负责。其地位相当于朝鲜的国防部。',0  '人民武装力量部','隶属国家','朝鲜',0  '人民武装力量部','成立时间','1948-02-xx',0  '人民武装力量部','发展历史','1948年2月，朝鲜人民委员会设立“民族保卫局”，以金策为局长，负责朝鲜人民军的前身“人民保安队”的建设。1948年9月，朝鲜民主主义人民共和国建国后，设立民族保卫省，作为朝鲜内阁下属的军事机关，负责朝鲜人民军事务，首任民族保卫相为崔庸健。此后一直到1972年，从国家机构层面来说，民族保卫省一直是朝鲜的最高军事机关。1972年，朝鲜设立中央人民委员会作为朝鲜最高权力机关，其下设立中央国防委员会（朝鲜国防委员会的前身）作为最高军事机关，取代了原来民族保卫省的位置。而民族保卫省则改名为人民武装力量部，从属于朝鲜政务院（即原来的朝鲜内阁）。首任部长为崔贤。1982年，人民武装力量部直属中央人民委员会，但保留政务院序列。1998年，朝鲜修宪废除中央人民委员会后，人民武装力量部改名“人民武装力量省”，隶属于于朝鲜民主主义人民共和国国防委员会。2000年以后，人民武装力量省又重新改名为人民武装力量部',0  '人民武装力量部','隶属于','国防委员会',1  '人民武装力量部','隶属于_反','人民军第108机械化军',0  '人民武装力量部','隶属于_反','特八军',0  '人民武装力量部','隶属于_反','陆军直属部队',0  '人民武装力量部','隶属于_反','空军',0  '人民武装力量部','隶属于_反','海军',0  '人民武装力量部','隶属于_反','东海岸防导弹团',0  '人民武装力量部','隶属于_反','西海岸防导弹团',0  '人民武装力量部','隶属于_反','海军防导弹团',0  '国防委员会','外文名称','Defense Committee',0  '国防委员会','简介','朝鲜国防委员会是朝鲜民主主义人民共和国于2016年之前设立的国家机关，不仅负责国防军事，而且对党政、经济等工作也都拥有最高决策权，原为朝鲜的最高权力机关。',0  '国防委员会','隶属国家','朝鲜',0  '国防委员会','成立时间','1998-xx-xx',0  '国防委员会','发展历史','改组为国务委员会',0  '国防委员会','组织架构','朝鲜劳动党设有中央军事委员会，是朝鲜劳动党的最高军事机关，根据党章的规定“统率我国的军事力量”。国防委员会里的一些成员，如金元弘、崔富日、李炳哲等，同时也是中央军委委员，而金正恩本人也是中央军委委员长。但长期以来，中央军委较少活动，例如金正日在进行外事活动时，也只是使用劳动党总书记和国防委员会委员长的身份。',0  '国防委员会','隶属于_反','后勤总局',0  '国防委员会','隶属于_反','技术总局',0 ];
+    // var Datas = ['\u4EBA\u6C11\u519B\u7B2C7\u519B','\u7B80\u4ECB','\u540E\u65B9\u6B63\u89C4\u519B',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u56FD\u5BB6','\u671D\u9C9C',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u7701','\u54B8\u955C\u5317\u9053',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u5E02','\u54B8\u4E8E\u5E02',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u7ECF\u5EA6','129.4581955',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u7EAC\u5EA6','41.8148758',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u6210\u7ACB\u65F6\u95F4','xxxx-xx-xx',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u73B0\u4EFB\u9886\u5BFC\u4EBA','\u827E\u4E91\u5CF0',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E','\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8',1, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C10\u6B65\u5175\u5E08',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C20\u6B65\u5175\u5E08',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C5\u65B0\u8BAD\u5E08',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C6\u65B0\u8BAD\u5E08',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C7\u65B0\u8BAD\u5E08',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C8\u65B0\u8BAD\u5E08',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C87\u8F7B\u6B65\u5175\u65C5',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C7\u5766\u514B\u65C5',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C7 \u70AE\u5175\u65C5',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C4\u706B\u7BAD\u70AE\u65C5',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C7\u9632\u7A7A\u56E2',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7B2C7\u5DE5\u5175\u56E2',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u53CD\u5766\u514B\u8425',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u5316\u5B66\u8425',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u7535\u8BAF\u4FE1\u53F7\u8425',0, '\u4EBA\u6C11\u519B\u7B2C7\u519B','\u96B6\u5C5E\u4E8E_\u53CD','\u901A\u8BAF\u8425',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u5916\u6587\u540D\u79F0','People\"s Armed Forces Department',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u7B80\u4ECB','\u671D\u9C9C\u6C11\u4E3B\u4E3B\u4E49\u4EBA\u6C11\u5171\u548C\u56FD\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8\uFF08\u671D\u9C9C\u8BED\uFF1A\uC870\uC120\uBBFC\uC8FC\uC8FC\uC758\uC778\uBBFC\uACF5\uD654\uAD6D \uC778\uBBFC\uBB34\uB825\uBD80\uFF09\u7B80\u79F0\u671D\u9C9C\u4EBA\u6C11\u6B66\u529B\u90E8\uFF0C\u662F\u671D\u9C9C\u6C11\u4E3B\u4E3B\u4E49\u4EBA\u6C11\u5171\u548C\u56FD\u56FD\u9632\u59D4\u5458\u4F1A\u7EDF\u5E05\u671D\u9C9C\u5168\u56FD\u6B66\u88C5\u529B\u91CF\uFF08\u5305\u62EC\u671D\u9C9C\u4EBA\u6C11\u519B\u3001\u671D\u9C9C\u4EBA\u6C11\u5185\u52A1\u519B\u548C\u671D\u9C9C\u5DE5\u519C\u8D64\u536B\u519B\uFF09\u7684\u4E0B\u5C5E\u6267\u884C\u673A\u5173\uFF0C\u5BF9\u671D\u9C9C\u5168\u56FD\u7684\u6B66\u88C5\u529B\u91CF\u8D1F\u8D23\u3002\u5176\u5730\u4F4D\u76F8\u5F53\u4E8E\u671D\u9C9C\u7684\u56FD\u9632\u90E8\u3002',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u56FD\u5BB6','\u671D\u9C9C',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u6210\u7ACB\u65F6\u95F4','1948-02-xx',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u53D1\u5C55\u5386\u53F2','1948\u5E742\u6708\uFF0C\u671D\u9C9C\u4EBA\u6C11\u59D4\u5458\u4F1A\u8BBE\u7ACB\u201C\u6C11\u65CF\u4FDD\u536B\u5C40\u201D\uFF0C\u4EE5\u91D1\u7B56\u4E3A\u5C40\u957F\uFF0C\u8D1F\u8D23\u671D\u9C9C\u4EBA\u6C11\u519B\u7684\u524D\u8EAB\u201C\u4EBA\u6C11\u4FDD\u5B89\u961F\u201D\u7684\u5EFA\u8BBE\u30021948\u5E749\u6708\uFF0C\u671D\u9C9C\u6C11\u4E3B\u4E3B\u4E49\u4EBA\u6C11\u5171\u548C\u56FD\u5EFA\u56FD\u540E\uFF0C\u8BBE\u7ACB\u6C11\u65CF\u4FDD\u536B\u7701\uFF0C\u4F5C\u4E3A\u671D\u9C9C\u5185\u9601\u4E0B\u5C5E\u7684\u519B\u4E8B\u673A\u5173\uFF0C\u8D1F\u8D23\u671D\u9C9C\u4EBA\u6C11\u519B\u4E8B\u52A1\uFF0C\u9996\u4EFB\u6C11\u65CF\u4FDD\u536B\u76F8\u4E3A\u5D14\u5EB8\u5065\u3002\u6B64\u540E\u4E00\u76F4\u52301972\u5E74\uFF0C\u4ECE\u56FD\u5BB6\u673A\u6784\u5C42\u9762\u6765\u8BF4\uFF0C\u6C11\u65CF\u4FDD\u536B\u7701\u4E00\u76F4\u662F\u671D\u9C9C\u7684\u6700\u9AD8\u519B\u4E8B\u673A\u5173\u30021972\u5E74\uFF0C\u671D\u9C9C\u8BBE\u7ACB\u4E2D\u592E\u4EBA\u6C11\u59D4\u5458\u4F1A\u4F5C\u4E3A\u671D\u9C9C\u6700\u9AD8\u6743\u529B\u673A\u5173\uFF0C\u5176\u4E0B\u8BBE\u7ACB\u4E2D\u592E\u56FD\u9632\u59D4\u5458\u4F1A\uFF08\u671D\u9C9C\u56FD\u9632\u59D4\u5458\u4F1A\u7684\u524D\u8EAB\uFF09\u4F5C\u4E3A\u6700\u9AD8\u519B\u4E8B\u673A\u5173\uFF0C\u53D6\u4EE3\u4E86\u539F\u6765\u6C11\u65CF\u4FDD\u536B\u7701\u7684\u4F4D\u7F6E\u3002\u800C\u6C11\u65CF\u4FDD\u536B\u7701\u5219\u6539\u540D\u4E3A\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8\uFF0C\u4ECE\u5C5E\u4E8E\u671D\u9C9C\u653F\u52A1\u9662\uFF08\u5373\u539F\u6765\u7684\u671D\u9C9C\u5185\u9601\uFF09\u3002\u9996\u4EFB\u90E8\u957F\u4E3A\u5D14\u8D24\u30021982\u5E74\uFF0C\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8\u76F4\u5C5E\u4E2D\u592E\u4EBA\u6C11\u59D4\u5458\u4F1A\uFF0C\u4F46\u4FDD\u7559\u653F\u52A1\u9662\u5E8F\u5217\u30021998\u5E74\uFF0C\u671D\u9C9C\u4FEE\u5BAA\u5E9F\u9664\u4E2D\u592E\u4EBA\u6C11\u59D4\u5458\u4F1A\u540E\uFF0C\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8\u6539\u540D\u201C\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u7701\u201D\uFF0C\u96B6\u5C5E\u4E8E\u4E8E\u671D\u9C9C\u6C11\u4E3B\u4E3B\u4E49\u4EBA\u6C11\u5171\u548C\u56FD\u56FD\u9632\u59D4\u5458\u4F1A\u30022000\u5E74\u4EE5\u540E\uFF0C\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u7701\u53C8\u91CD\u65B0\u6539\u540D\u4E3A\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E','\u56FD\u9632\u59D4\u5458\u4F1A',1, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u4EBA\u6C11\u519B\u7B2C108\u673A\u68B0\u5316\u519B',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u7279\u516B\u519B',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u9646\u519B\u76F4\u5C5E\u90E8\u961F',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u7A7A\u519B',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u6D77\u519B',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u4E1C\u6D77\u5CB8\u9632\u5BFC\u5F39\u56E2',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u897F\u6D77\u5CB8\u9632\u5BFC\u5F39\u56E2',0, '\u4EBA\u6C11\u6B66\u88C5\u529B\u91CF\u90E8','\u96B6\u5C5E\u4E8E_\u53CD','\u6D77\u519B\u9632\u5BFC\u5F39\u56E2',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u5916\u6587\u540D\u79F0','Defense Committee',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u7B80\u4ECB','\u671D\u9C9C\u56FD\u9632\u59D4\u5458\u4F1A\u662F\u671D\u9C9C\u6C11\u4E3B\u4E3B\u4E49\u4EBA\u6C11\u5171\u548C\u56FD\u4E8E2016\u5E74\u4E4B\u524D\u8BBE\u7ACB\u7684\u56FD\u5BB6\u673A\u5173\uFF0C\u4E0D\u4EC5\u8D1F\u8D23\u56FD\u9632\u519B\u4E8B\uFF0C\u800C\u4E14\u5BF9\u515A\u653F\u3001\u7ECF\u6D4E\u7B49\u5DE5\u4F5C\u4E5F\u90FD\u62E5\u6709\u6700\u9AD8\u51B3\u7B56\u6743\uFF0C\u539F\u4E3A\u671D\u9C9C\u7684\u6700\u9AD8\u6743\u529B\u673A\u5173\u3002',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u96B6\u5C5E\u56FD\u5BB6','\u671D\u9C9C',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u6210\u7ACB\u65F6\u95F4','1998-xx-xx',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u53D1\u5C55\u5386\u53F2','\u6539\u7EC4\u4E3A\u56FD\u52A1\u59D4\u5458\u4F1A',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u7EC4\u7EC7\u67B6\u6784','\u671D\u9C9C\u52B3\u52A8\u515A\u8BBE\u6709\u4E2D\u592E\u519B\u4E8B\u59D4\u5458\u4F1A\uFF0C\u662F\u671D\u9C9C\u52B3\u52A8\u515A\u7684\u6700\u9AD8\u519B\u4E8B\u673A\u5173\uFF0C\u6839\u636E\u515A\u7AE0\u7684\u89C4\u5B9A\u201C\u7EDF\u7387\u6211\u56FD\u7684\u519B\u4E8B\u529B\u91CF\u201D\u3002\u56FD\u9632\u59D4\u5458\u4F1A\u91CC\u7684\u4E00\u4E9B\u6210\u5458\uFF0C\u5982\u91D1\u5143\u5F18\u3001\u5D14\u5BCC\u65E5\u3001\u674E\u70B3\u54F2\u7B49\uFF0C\u540C\u65F6\u4E5F\u662F\u4E2D\u592E\u519B\u59D4\u59D4\u5458\uFF0C\u800C\u91D1\u6B63\u6069\u672C\u4EBA\u4E5F\u662F\u4E2D\u592E\u519B\u59D4\u59D4\u5458\u957F\u3002\u4F46\u957F\u671F\u4EE5\u6765\uFF0C\u4E2D\u592E\u519B\u59D4\u8F83\u5C11\u6D3B\u52A8\uFF0C\u4F8B\u5982\u91D1\u6B63\u65E5\u5728\u8FDB\u884C\u5916\u4E8B\u6D3B\u52A8\u65F6\uFF0C\u4E5F\u53EA\u662F\u4F7F\u7528\u52B3\u52A8\u515A\u603B\u4E66\u8BB0\u548C\u56FD\u9632\u59D4\u5458\u4F1A\u59D4\u5458\u957F\u7684\u8EAB\u4EFD\u3002',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u96B6\u5C5E\u4E8E_\u53CD','\u540E\u52E4\u603B\u5C40',0, '\u56FD\u9632\u59D4\u5458\u4F1A','\u96B6\u5C5E\u4E8E_\u53CD','\u6280\u672F\u603B\u5C40',0];
+    var data = [];
+    data = Datas;
+    var entity = []; //存实体
+    var allTargetEntity = []; //存目标实体
+    var propertyName = []; //存属性名
+    var flag = []; //存标记位
+    var propertyValues = []; //存属性/关系
+    var bentity = []; //备份存实体
+    var bpropertyValues = []; //备份存属性/关系
+    var i = 0;
+    var j = 0;
+    var k = 0;
+    var l = 0;
+    for (var a = 0; a < data.length; a++) {
+        if (a % 4 == 0) {
+            if (data[a].length > 3) {
+                var values = "";
+                var loops = Math.ceil(data[a].length);
+                for (var z = 0; z < loops; z += 10) {
+                    if (loops >= 10) {
+                        values += data[a].substring(z, Math.min(data[a].length, z + 10)) + '<br/>';
+                    } else {
+                        values += data[a].substring(z, Math.min(data[a].length, z + 10));
+                    }
+                }
+                entity[l] = values;
+            } else {
+                entity[l] = data[a];
+            }
+            //entity[l]=data[a];
+            if (entity[l].length > 3) {
+                bentity[l] = data[a].substring(0, 3) + "...";
+            } else {
+                bentity[l] = data[a];
+            }
+            //allTargetEntity[l]=bentity[l];
+            l++;
+        } else if (a % 4 == 1) {
+            propertyName[i] = data[a];
+            i++;
+        } else if (a % 4 == 2) {
+            if (data[a].length > 3) {
+                var values = "";
+                var loops = Math.ceil(data[a].length);
+                for (var z = 0; z < loops; z += 10) {
+                    if (loops >= 10) {
+                        values += data[a].substring(z, Math.min(data[a].length, z + 10)) + '<br/>';
+                    } else {
+                        values += data[a].substring(z, Math.min(data[a].length, z + 10));
+                    }
+                }
+                propertyValues[j] = values;
+            } else {
+                propertyValues[j] = data[a];
+            }
+            if (propertyValues[j].length > 3) {
+                bpropertyValues[j] = data[a].substring(0, 3) + "...";
+            } else {
+                bpropertyValues[j] = data[a];
+            }
+            j++;
+        } else {
+            flag[k] = data[a];
+            k++;
+        }
+    }
+    for (var i = 0; i < entity.length; i++) { //对截取的相同实体进行分类
+        for (var j = i + 1; j < entity.length; j++) {
+            if (entity[i].substring(0, 3) == entity[j].substring(0, 3) && entity[i] != entity[j]) {
+                //bentity[i]=bentity[i].replace("...","....");
+                bentity[j] = bentity[j].replace("...", "....");
+            }
+        }
+    }
+    var m = 1;
+    var v = 1;
+    for (var i = 0; i < propertyValues.length; i++) { //对截取的相同属性值进行分类
+        for (var j = i + 1; j < propertyValues.length; j++) {
+            if (bpropertyValues[i] == bpropertyValues[j] && propertyValues[i] != propertyValues[j]) {
+                //bpropertyValues[i]=bpropertyValues[i].replace("...","....");		    			
+                bpropertyValues[j] = bpropertyValues[j].replace("...", "(" + m + ")...");
+                m++;
+                for (var s = 0; s < propertyValues.length; s++) {
+                    if (propertyValues[i] == propertyValues[s] && i != s) {
+                        bpropertyValues[s] = bpropertyValues[s].replace("...", "(" + v + ")...");
+                    }
+                }
+                v = m;
+            }
+        }
+    } //alert(bpropertyValues);
+    var alldata = []; //存所有实体、属性
+    var copyalldata = []; //备份存所有实体、属性
+    var ss = 1;
+    var m = 1;
+    alldata[0] = propertyValues[0];
+    copyalldata[0] = bpropertyValues[0];
+    for (var i = 0; i < propertyValues.length; i++) { //存所有属性
+        for (var j = 0; j < alldata.length; j++) {
+            if (propertyValues[i] == alldata[j]) {
+                break;
+            } else if (propertyValues[i] != alldata[j] && j == alldata.length - 1) {
+                alldata[ss] = propertyValues[i];
+                copyalldata[ss] = bpropertyValues[i];
+                ss++;
+            }
+        }
+    }
+    var Tentity = []; //存唯一的实体
+    var bTentity = []; //存唯一的实体
+    var m = 0;
+    for (var i = 0; i < entity.length; i++) { //去除相同的实体
+        var flar = true;
+        for (var j = i + 1; j < entity.length; j++) {
+            if (entity[i] == entity[j]) {
+                flar = false;
+                break;
+            }
+        }
+        if (flar) {
+            Tentity[m] = entity[i];
+            bTentity[m] = bentity[i];
+            m++;
+        }
+    }
+    for (var i = 0; i < Tentity.length; i++) { //把实体放到这里		    	
+        alldata[alldata.length] = Tentity[i];
+        copyalldata[copyalldata.length] = bTentity[i];
+    }
+    var alldatas = []; //存所有实体、属性
+    var copyalldatas = []; //存所有实体、属性
+    var m = 0;
+    for (var i = 0; i < alldata.length; i++) { //去除alldata和copyalldata中的相同实体、属性
+        var flar = true;
+        for (var j = i + 1; j < alldata.length; j++) {
+            if (alldata[i] == alldata[j]) {
+                flar = false;
+                break;
+            }
+        }
+        if (flar) {
+            alldatas[m] = alldata[i];
+            copyalldatas[m] = copyalldata[i];
+            m++;
+        }
+    }
+
+    function DataArray() {
+        data = new Array();
+        for (var i = 0; i < copyalldatas.length; i++) {
+            data.push({ name: copyalldatas[i], ip: alldatas[i], isnode: true }); //force时，不能加x、y坐标
+        }
+        return data;
+    }
+
+    function LinkData() {
+        link = new Array();
+        for (var i = 0; i < propertyName.length; i++) { //propertyName.length
+            link.push({
+                source: bentity[i],
+                target: bpropertyValues[i],
+                name: propertyName[i],
+                label: {
+                    normal: {
+                        show: true, //color:'#F3A43B',//线上文字颜色
+                        formatter: function(x) { return x.data.name }
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        opacity: 1,
+                        //width: 2,
+                        curveness: 0.2
+                    }
+                }
+            });
+        }
+        return link;
+    }
+    var option = {
+        title: {
+            text: '力导引网络图谱'
+        },
+        tooltip: {
+            position: 'left',
+            backgroundColor: 'gray',
+            textStyle: { fontSize: 13 },
+            formatter: function(params) {
+                if (params.data.isnode) {
+                    return params.data.ip;
+                }
+            },
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        /* dataZoom:[{
+           show: true,       
+           title:{
+        	   zoom:'力导引网络图谱',
+        	   back:'力导引网络图谱',
+           },
+        }],  */
+        series: [{
+            type: 'graph',
+            layout: 'force', //'circular',
+            symbolSize: 50, //圆的大小
+            draggable: true,
+            roam: true,
+            focusNodeAdjacency: true,
+            label: {
+                normal: {
+                    show: true //显示圆中文字 
+                }
+            },
+            categories: [{},
+                {},
+                {},
+                {}
+            ],
+            edgeSymbol: ['circle', 'arrow'], //图的边的类型
+            edgeSymbolSize: [4, 10], //有向图的箭头大小
+            force: {
+                // initLayout: 'circular'
+                // gravity: 0
+                repulsion: 600,
+                edgeLength: 200
+            },
+            circular: {
+                //rotateLabel:true
+            },
+            edgeLabel: {
+                normal: {
+                    textStyle: {
+                        //fontWeight: 'bold',
+                        //opacity: 0.7,
+                        fontSize: 10 //线上文字的大小
+                    }
+                }
+            },
+            data: DataArray(),
+            links: LinkData(),
+            lineStyle: {
+                normal: {
+                    color: '#2f4554'
+                }
+            }
+        }]
+    };
+    myChart.setOption(option);
+    </script>
+</body>
+
+</html>
