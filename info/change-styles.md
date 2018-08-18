@@ -7,3 +7,5 @@
 ### 修改域名
 当前博客通过CNAME将 taoer1996.github.io 指向 zengyutao.me，然后又由A记录指向github博客服务器IP，所以经过了两次解析，之后也可以直接将博客托管至私人服务器上 
 
+### Jekyll文档
+如果需要对博客进行进一步的扩充和处理，可以参照[文档](http://jekyllcn.com/docs)
