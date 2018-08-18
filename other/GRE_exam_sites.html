@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/3.8.4/echarts.min.js"></script>
+    <script src="https://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+    <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    table.gridtable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#404a59;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+    }
+    table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        color: white;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #0596AE;
+        text-align:center;
+    }
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: lightgrey;
+    }
+    </style>
+</head>
+
+<!-- <body style="background-color:#404a59;"> -->
+<body style="background-color:#628C99;">
+ 
+    <div id="main3" style="width: 150%;height:1536px; "></div>
+    <script type="text/javascript">
+    var myChart= echarts.init(document.getElementById('main3'));
+    var name_title = "全国GRE考点地图";
+    var name_fontFamily = '微软雅黑';
+    var name_fontSize = 18;
+    var mapName = 'china';
+
+    var data3 = [
+        {name:"北京", value:1},
+        {name:"长春", value:1},
+        {name:"长沙", value:1},
+        {name:"成都", value:1},
+        {name:"重庆", value:1},
+        {name:"大连", value:1},
+        {name:"福州", value:1},
+        {name:"广州", value:1},
+        {name:"哈尔滨", value:1},
+        {name:"海口", value:1},
+        {name:"杭州", value:1},
+        {name:"合肥", value:1},
+        {name:"呼和浩特", value:1},
+        {name:"济南", value:1},
+        {name:"昆明", value:1},
+        {name:"兰州", value:1},
+        {name:"临沂", value:1},
+        {name:"洛阳", value:1},
+        {name:"南昌", value:1},
+        {name:"南京", value:1},
+        {name:"南通", value:1},
+        {name:"宁波", value:1},
+        {name:"青岛", value:1},
+        {name:"上海", value:1},
+        {name:"汕头", value:1},
+        {name:"沈阳", value:1},
+        {name:"深圳", value:1},
+        {name:"石家庄", value:1},
+        {name:"苏州", value:1},
+        {name:"太仓", value:1},
+        {name:"太原", value:1},
+        {name:"天津", value:1},
+        {name:"潍坊", value:1},
+        {name:"威海", value:1},
+        {name:"武汉", value:1},
+        {name:"乌鲁木齐", value:1},
+        {name:"厦门", value:1},
+        {name:"西安", value:1},
+        {name:"扬州", value:1},
+        {name:"郑州", value:1}
+    ];
+    
+    var provincedata3 = [
+        {name:"安徽", value:1},
+        {name:"北京", value:1},
+        {name:"福建", value:1},
+        {name:"广东", value:1},
+        {name:"江苏", value:1},
+        {name:"江西", value:1},
+        {name:"陕西", value:1},
+        {name:"上海", value:1},
+        {name:"四川", value:1},
+        {name:"天津", value:1},
+        {name:"香港", value:1},
+        {name:"山西",value:1},
+        {name:"内蒙古",value:1},
+        {name:"辽宁",value:1},
+        {name:"黑龙江",value:1},
+        {name:"浙江",value:1},
+        {name:"河南",value:1},
+        {name:"湖北",value:1},
+        {name:"重庆",value:1},
+        {name:"贵州",value:1},
+        {name:"云南",value:1},
+        {name:"西藏",value:1},
+        {name:"甘肃",value:1},
+        {name:"青海",value:1},
+        {name:"宁夏",value:1},
+        {name:"新疆",value:1},
+        {name:"广西",value:1},
+        {name:"海南",value:1},
+        {name:"台湾",value:1},
+        {name:"澳门",value:1},
+        {name:"香港",value:1},
+        {name:"南海诸岛",value:1},
+        {name:"海外", value:1},
+        {name:"山东",value:1},
+        {name:"吉林",value:1},
+        {name:"河北",value:1},
+        {name:"湖南",value:1},
+    ];
+
+    var geoCoordMap = {
+            '上海': [121.4648,31.2891],
+            '东莞': [113.8953,22.901],
+            '东营': [118.7073,37.5513],
+            '中山': [113.4229,22.478],
+            '临汾': [111.4783,36.1615],
+            '临沂': [118.3118,35.2936],
+            '丹东': [124.541,40.4242],
+            '丽水': [119.5642,28.1854],
+            '乌鲁木齐': [87.9236,43.5883],
+            '佛山': [112.8955,23.1097],
+            '保定': [115.0488,39.0948],
+            '兰州': [103.5901,36.3043],
+            '包头': [110.3467,41.4899],
+            '北京': [116.4551,40.2539],
+            '北海': [109.314,21.6211],
+            '南京': [118.7378,32.0993],        
+            '南宁': [108.479,23.1152],
+            '南昌': [116.0046,28.6633],
+            '南通': [121.1023,32.1625],
+            '厦门': [118.1689,24.6478],
+            '台州': [121.1353,28.6688],
+            '合肥': [117.29,32.0581],
+            '呼和浩特': [111.4124,40.4901],
+            '咸阳': [108.4131,34.8706],
+            '哈尔滨': [127.9688,45.368],
+            '唐山': [118.4766,39.6826],
+            '嘉兴': [120.9155,30.6354],
+            '大同': [113.7854,39.8035],
+            '大连': [122.2229,39.4409],
+            '天津': [117.4219,39.4189],
+            '太原': [112.3352,37.9413],
+            '威海': [121.9482,37.1393],
+            '宁波': [121.5967,29.6466],
+            '宝鸡': [107.1826,34.3433],
+            '宿迁': [118.5535,33.7775],
+            '常州': [119.4543,31.5582],
+            '广州': [113.5107,23.2196],
+            '廊坊': [116.521,39.0509],
+            '延安': [109.1052,36.4252],
+            '张家口': [115.1477,40.8527],
+            '徐州': [117.5208,34.3268],
+            '德州': [116.6858,37.2107],
+            '惠州': [114.6204,23.1647],
+            '成都': [103.9526,30.7617],
+            '扬州': [119.4653,32.8162],
+            '承德': [117.5757,41.4075],
+            '拉萨': [91.1865,30.1465],
+            '无锡': [120.3442,31.5527],
+            '日照': [119.2786,35.5023],
+            '昆明': [102.9199,25.4663],
+            '杭州': [119.5313,29.8773],
+            '枣庄': [117.323,34.8926],
+            '柳州': [109.3799,24.9774],
+            '株洲': [113.5327,27.0319],
+            '武汉': [114.3896,30.6628],
+            '汕头': [117.1692,23.3405],
+            '江门': [112.6318,22.1484],
+            '沈阳': [123.1238,42.1216],
+            '沧州': [116.8286,38.2104],
+            '河源': [114.917,23.9722],
+            '泉州': [118.3228,25.1147],
+            '泰安': [117.0264,36.0516],
+            '泰州': [120.0586,32.5525],
+            '济南': [117.1582,36.8701],
+            '济宁': [116.8286,35.3375],
+            '海口': [110.3893,19.8516],
+            '淄博': [118.0371,36.6064],
+            '淮安': [118.927,33.4039],
+            '深圳': [114.5435,22.5439],
+            '清远': [112.9175,24.3292],
+            '温州': [120.498,27.8119],
+            '渭南': [109.7864,35.0299],
+            '湖州': [119.8608,30.7782],
+            '湘潭': [112.5439,27.7075],
+            '滨州': [117.8174,37.4963],
+            '潍坊': [119.0918,36.524],
+            '烟台': [120.7397,37.5128],
+            '玉溪': [101.9312,23.8898],
+            '珠海': [113.7305,22.1155],
+            '盐城': [120.2234,33.5577],
+            '盘锦': [121.9482,41.0449],
+            '石家庄': [114.4995,38.1006],
+            '福州': [119.4543,25.9222],
+            '秦皇岛': [119.2126,40.0232],
+            '绍兴': [120.564,29.7565],
+            '聊城': [115.9167,36.4032],
+            '肇庆': [112.1265,23.5822],
+            '舟山': [122.2559,30.2234],
+            '苏州': [120.6519,31.3989],
+            '莱芜': [117.6526,36.2714],
+            '菏泽': [115.6201,35.2057],
+            '营口': [122.4316,40.4297],
+            '葫芦岛': [120.1575,40.578],
+            '衡水': [115.8838,37.7161],
+            '衢州': [118.6853,28.8666],
+            '西宁': [101.4038,36.8207],
+            '西安': [109.1162,34.2004],
+            '贵阳': [106.6992,26.7682],
+            '连云港': [119.1248,34.552],
+            '邢台': [114.8071,37.2821],
+            '邯郸': [114.4775,36.535],
+            '郑州': [113.4668,34.6234],
+            '鄂尔多斯': [108.9734,39.2487],
+            '重庆': [107.7539,30.1904],
+            '九江': [115.9477,29.8001],   
+            '洛阳': [112.27,34.41], 
+            '上饶': [117.58,28.46],
+            '南阳': [112.32,33.00],     
+            '宜春': [114.23,27.47], 
+            '吉安': [114.58,27.07],
+            '新干': [115.21,27.73],
+            '周口': [114.38,33.37],     
+            '商丘': [115.38,34.26],       
+            '信阳': [114.04,32.07],     
+            '安阳': [114.21,36.06],   
+            '景德镇': [117.31,29.17],     
+            '十堰': [110.47,32.40],      
+            '恩施': [109.29,30.16],     
+            '咸宁': [114.17,29.53],       
+            '黄石': [115.06,30.12],     
+            '岳阳': [113.06,29.22],   
+            '郴州': [113.02,25.46],     
+            '永州': [111.37,26.13],       
+            '益阳': [112.20,28.36],     
+            '怀化': [109.58,27.33],       
+            '榆林': [109.47,38.18],   
+            '南平': [118.10,26.38], 
+            '宁德': [119.31,26.39],     
+            '三明': [117.36,26.13],     
+            '抚州': [116.34,28.00],  
+            '湘西': [109.74,28.31],  
+            '金华': [120.0037,29.1028],
+            '铜川': [109.0393,35.1947],
+            '银川': [106.3586,38.1775],
+            '镇江': [119.4763,31.9702],
+            '长春': [125.8154,44.2584],
+            '长沙': [113.0823,28.2568],
+            '长治': [112.8625,36.4746],
+            '阳泉': [113.4778,38.0951],
+            '青岛': [120.4651,36.3373],
+            '韶关': [113.7964,24.7028],
+            '海外': [139.7104,35.6733],
+            '香港': [114.2632768,22.3364047],
+            '太仓': [120.8937621,31.5638069]
+    };
+
+
+    var convertdata3 = function(data3) {
+        var res = [];
+        for (var i = 0; i < data3.length; i++) {
+            var geoCoord = geoCoordMap[data3[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data3[i].name,
+                    value: geoCoord.concat(data3[i].value),
+                });
+            }
+        }
+        return res;
+    };
+  
+    option = {
+        //backgroundColor: '#404a59',
+        title: {
+            text: name_title,
+            x: 'center',
+            top: '30',
+            textStyle: {
+                color: 'black',
+                fontFamily: name_fontFamily,
+                fontSize: name_fontSize
+            }
+        },
+        
+        tooltip: {
+            show: true,
+            trigger : 'item',
+            backgroundColor:'rgba(33, 158, 196, 0.92)',
+            borderColor:'#FFFFCC',
+            showDelay : 0,
+            hideDelay : 0,
+            enterable:true,
+            transitionDuration : 0,
+            extraCssText:'z-index:100',
+            
+            formatter: function(params){
+            	return "";
+            }
+        },
+
+        visualMap: {
+            show: true,
+            min: 0,
+            max: 10,
+            left: 'left',
+            //top: 'bottom',
+            bottom: '120px',
+            text: ['高', '低'], // 文本，默认为数值文本
+            calculable: true,
+            seriesIndex: [1],
+            inRange: {
+                // color: ['#3B5077', '#031525'] // 蓝黑
+                // color: ['#ffc0cb', '#800080'] // 红紫
+                // color: ['#3C3B3F', '#605C3C'] // 黑绿
+                // color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
+                // color: ['royal blue', 'red'] // 紫红
+                //color: ['#00467F', '#A5CC82'] // 蓝绿
+                // color: ['white', 'grey', 'lightskyblue','yellow', 'orange', 'darkorange']
+                color: ['lightgrey']
+                //color: ['#1488CC', '#2B32B2'] // 浅蓝
+                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                // color: ['#00467F', '#A5CC82'] // 蓝绿
+
+            }
+        },
+        
+        toolbox: {
+            show: true,
+            //orient: 'vertical',
+            //left: 'right',
+            right: '50',
+            top: '30',
+            iconStyle: {
+                normal: {
+                    borderColor: '#fff'
+                },
+                emphasis: {
+                    borderColor: '#b1e4ff'
+                }
+            },
+            feature: {
+                data3View: {
+                    readOnly: false
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        
+        geo: {
+            type: 'map',
+            map: 'china',
+            top: '30',
+            left: '10',
+            right: '30%',
+            center: [90,34],
+            zoom: 0.85,
+                       
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#7BB075',
+                    borderColor: '#111'
+                },
+                emphasis: {
+                    areaColor: '#4C89C2'
+                }
+            },
+            animation: true,
+            data: data3      
+        },
+        
+        series: [
+            {
+                name: '散点',
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                data: convertdata3(data3),
+                symbolSize: function(val) {
+                    console.log(val);
+                    return val[2] + 6;
+                },
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: true,
+                        color: 'black',
+                        fontWeight: 'bold'
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#F02D15'
+                    },
+                    emphasis: {
+                        color: 'blue'
+                    }
+                }
+            },
+            {
+                type: 'map',
+                map: mapName,
+                geoIndex: 0,
+                aspectScale: 0.75, //长宽比
+                showLegendSymbol: false, // 存在legend时显示
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            color: 'black'
+                        }
+                    }
+                },
+                roam: true,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#7BB075',
+                        borderColor: '#111',
+                    },
+                    emphasis: {
+                        areaColor: '#4C89C2'
+                    }
+                },
+                animation: true,
+                data: provincedata3
+            },
+            {
+                name: '点',
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                
+                symbol: 'none', //气泡
+                symbolSize: function(val) {
+                    return 15;
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 12,
+                            fontWeight: 'bold',
+                            fontFamily: '微软雅黑',
+                           
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#F02D15', //标志颜色
+                    }
+                },
+                zlevel: 6,
+                data: convertdata3(data3),
+            }
+        ]
+    };
+    myChart.setOption(option);
+    </script>
+    
+</body>
+
+</html>
