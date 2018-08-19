@@ -15,7 +15,7 @@ layout: base
 					{%- include components/article-data.html -%}
 				</header>
 				<div class="m-article-content js-article-content" itemprop="articleBody">{{ content }}</div>
-				<footer>
+				<footer style="margin-top: 50px !important;">
 					{%- if page.modify_date -%}
 						{%- assign __locale = site.data.locale.ARTICLE_DATE_FORMAT -%}
 						{%- include snippets/locale-to-string.html -%}

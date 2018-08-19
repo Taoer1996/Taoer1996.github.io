@@ -12,6 +12,12 @@
   @include media-breakpoint-down(l) {
     padding-bottom: 0.8rem;
   }
+  table {
+      display: table !important;
+      text-align: center;
+      width: 90%;
+      margin: auto;
+  }
 }
 
 .m-page-main {
