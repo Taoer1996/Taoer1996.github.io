@@ -1,0 +1,964 @@
+<!DOCTYPE html><html lang="zh">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>部分PPT模板预览 - Taoer's blog</title>
+<meta name="description" content="部分PPT模板预览第1套第2套第3套第4套第5套第6套第7套第8套第9套第10套第11套第12套第13套第14套第15套第16套第17套第18套第19套第20套第21套第22套第23套第24套第25套第26套第27套第28套第29套第30套第31套第32套第33套第34套第35套第36套第37套第38套第39套第...">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    inlineMath: [['$','$']]
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="canonical" href="http://localhost:4000/%E8%B5%84%E6%BA%90/2019/04/09/%E9%83%A8%E5%88%86PPT%E6%A8%A1%E6%9D%BF%E9%A2%84%E8%A7%88.html"><link rel="alternate" type="application/rss+xml" title="Taoer's blog" href="http://localhost:4000/feed.xml">
+
+<!-- for Safari on iOS https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo/icon-180x180.png"><link rel="apple-touch-icon" sizes="167x167" href="/assets/images/logo/icon-167x167.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/images/logo/icon-152x152.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/images/logo/icon-120x120.png"><link rel="shortcut icon" href="/assets/images/logo/icon-120x120.png">
+<!-- for Chrome on Android https://developer.chrome.com/multidevice/android/installtohomescreen -->
+<meta name="mobile-web-app-capable" content="yes"><link rel="icon" sizes="192x192" href="/assets/images/logo/icon-192x192.png">
+<!-- for Edge on Windows 10 https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx --><meta name="msapplication-TileImage" content="/assets/images/logo/icon-144x144.png"><meta name="msapplication-square310x310logo" content="/assets/images/logo/icon-310x310.png"><meta name="msapplication-wide310x150logo" content="/assets/images/logo/icon-310x150.png"><meta name="msapplication-square150x150logo" content="/assets/images/logo/icon-150x150.png"><meta name="msapplication-square70x70logo" content="/assets/images/logo/icon-70x70.png">
+<meta name="msapplication-TileColor" content="#eeeeee"><link rel="stylesheet" href="/assets/css/blog.css"><script>
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var Set = (function() {
+      var add = function(item) {
+        var i, data = this._data;
+        for (i = 0; i < data.length; i++) {
+          if (data[i] === item) {
+            return;
+          }
+        }
+        this.size ++;
+        data.push(item);
+        return data;
+      }
+
+      var Set = function(data) {
+        this.size = 0;
+        this._data = [];
+        if (data.length > 0) {
+          for (i = 0; i < data.length; i++) {
+            add.call(this, data[i]);
+          }
+        }
+      }
+      Set.prototype.add = add;
+      Set.prototype.get = function(index) { return this._data[index]; };
+      Set.prototype.has = function(item) {
+        var i, data = this._data;
+        for (i = 0; i < data.length; i++) {
+          if (this.get(i) === item) {
+            return true;
+          }
+        }
+        return false;
+      };
+      Set.prototype.is = function(map) {
+        if (map._data.length !== this._data.length) { return false; }
+        var i, j, flag, tData = this._data, mData = map._data;
+        for (i = 0; i < tData.length; i++) {
+          for (flag = false, j = 0; j < mData.length; j++) {
+            if (tData[i] === mData[j]) {
+              flag = true;
+              break;
+            }
+          }
+          if (!flag) { return false; }
+        }
+        return true;
+      };
+      Set.prototype.values = function() {
+        return this._data;
+      };
+      return Set;
+    })();
+
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    }
+    var end = function(type, url, urls) {
+      var s, q, qi, cbs, i, j, cur,
+        val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j]
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, si, q, qi, node, i, cur, flag,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  }
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  }
+</script></head>
+  <body>
+    <div class="m-page-stage js-page-stage">
+      <div class="m-page-content"><header class="m-page-header">
+  <div class="main clearfix">
+    <div class='site-logo'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24">
+<style type="text/css">
+	.st0{fill:#666666;}
+</style>
+<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
+	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
+</svg><a title="一些技术问题的记录地
+" href="/">Taoer's blog</a></div>
+    <nav class='nav-bar'>
+      <ul><li><a href="/">主页</a></li><li><a href="/all.html">博客</a></li><li><a href="/about.html">关于</a></li><li><a type="application/rss+xml" href="/feed.xml">RSS</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="m-page-main"><div class="m-post">
+	<div class="main clearfix js-main">
+		<div class="col-2 js-col-2">
+			<aside class="js-article-aside"><div class="m-toc js-toc"></div></aside>
+		</div>
+		<div class="col-1">
+			<article class="js-article" itemscope itemtype="http://schema.org/BlogPosting">
+				<meta itemprop="mainEntityOfPage" itemscope itemType="https://schema.org/WebPage"/>
+				<header class="main-header"><h1 itemprop="headline" itemprop="name headline">部分PPT模板预览</h1><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Taoer"/></meta><ul class="tag-wrapper"><li>
+          <a class="pill-button" href="/all.html?tag=%E8%B5%84%E6%BA%90">资源</a>
+        </li></ul><div class="other-wrapper"><div class="date-wrapper"><time class="article-meta" datetime="2019-04-09T00:00:00+08:00"
+          itemprop="datePublished">2019年 04月09日
+        </time></div>
+  </div>
+</div>
+</header>
+				<div class="m-article-content js-article-content" itemprop="articleBody"><h2 id="部分ppt模板预览">部分PPT模板预览</h2>
+
+<h3 id="第1套">第1套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/1.jpg" />
+</div>
+<h3 id="第2套">第2套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/2.jpg" />
+</div>
+<h3 id="第3套">第3套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/3.jpg" />
+</div>
+<h3 id="第4套">第4套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/4.jpg" />
+</div>
+<h3 id="第5套">第5套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/5.jpg" />
+</div>
+<h3 id="第6套">第6套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/6.jpg" />
+</div>
+<h3 id="第7套">第7套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/7.jpg" />
+</div>
+<h3 id="第8套">第8套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/8.jpg" />
+</div>
+<h3 id="第9套">第9套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/9.jpg" />
+</div>
+<h3 id="第10套">第10套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/10.jpg" />
+</div>
+<h3 id="第11套">第11套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/11.jpg" />
+</div>
+<h3 id="第12套">第12套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/12.jpg" />
+</div>
+<h3 id="第13套">第13套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/13.jpg" />
+</div>
+<h3 id="第14套">第14套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/14.jpg" />
+</div>
+<h3 id="第15套">第15套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/15.jpg" />
+</div>
+<h3 id="第16套">第16套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/16.jpg" />
+</div>
+<h3 id="第17套">第17套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/17.jpg" />
+</div>
+<h3 id="第18套">第18套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/18.jpg" />
+</div>
+<h3 id="第19套">第19套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/19.jpg" />
+</div>
+<h3 id="第20套">第20套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/20.jpg" />
+</div>
+<h3 id="第21套">第21套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/21.jpg" />
+</div>
+<h3 id="第22套">第22套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/22.jpg" />
+</div>
+<h3 id="第23套">第23套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/23.jpg" />
+</div>
+<h3 id="第24套">第24套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/24.jpg" />
+</div>
+<h3 id="第25套">第25套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/25.jpg" />
+</div>
+<h3 id="第26套">第26套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/26.jpg" />
+</div>
+<h3 id="第27套">第27套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/27.jpg" />
+</div>
+<h3 id="第28套">第28套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/28.jpg" />
+</div>
+<h3 id="第29套">第29套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/29.jpg" />
+</div>
+<h3 id="第30套">第30套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/30.jpg" />
+</div>
+<h3 id="第31套">第31套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/31.jpg" />
+</div>
+<h3 id="第32套">第32套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/32.jpg" />
+</div>
+<h3 id="第33套">第33套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/33.jpg" />
+</div>
+<h3 id="第34套">第34套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/34.jpg" />
+</div>
+<h3 id="第35套">第35套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/35.jpg" />
+</div>
+<h3 id="第36套">第36套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/36.jpg" />
+</div>
+<h3 id="第37套">第37套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/37.jpg" />
+</div>
+<h3 id="第38套">第38套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/38.jpg" />
+</div>
+<h3 id="第39套">第39套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/39.jpg" />
+</div>
+<h3 id="第40套">第40套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/40.jpg" />
+</div>
+<h3 id="第41套">第41套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/41.jpg" />
+</div>
+<h3 id="第42套">第42套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/42.jpg" />
+</div>
+<h3 id="第43套">第43套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/43.jpg" />
+</div>
+<h3 id="第44套">第44套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/44.jpg" />
+</div>
+<h3 id="第45套">第45套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/45.jpg" />
+</div>
+<h3 id="第46套">第46套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/46.jpg" />
+</div>
+<h3 id="第47套">第47套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/47.jpg" />
+</div>
+<h3 id="第48套">第48套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/48.jpg" />
+</div>
+<h3 id="第49套">第49套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/49.jpg" />
+</div>
+<h3 id="第50套">第50套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/50.jpg" />
+</div>
+<h3 id="第51套">第51套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/51.jpg" />
+</div>
+<h3 id="第52套">第52套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/52.jpg" />
+</div>
+<h3 id="第53套">第53套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/53.jpg" />
+</div>
+<h3 id="第54套">第54套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/54.jpg" />
+</div>
+<h3 id="第55套">第55套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/55.jpg" />
+</div>
+<h3 id="第56套">第56套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/56.jpg" />
+</div>
+<h3 id="第57套">第57套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/57.jpg" />
+</div>
+<h3 id="第58套">第58套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/58.jpg" />
+</div>
+<h3 id="第59套">第59套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/59.jpg" />
+</div>
+<h3 id="第60套">第60套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/60.jpg" />
+</div>
+<h3 id="第61套">第61套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/61.jpg" />
+</div>
+<h3 id="第62套">第62套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/62.jpg" />
+</div>
+<h3 id="第63套">第63套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/63.jpg" />
+</div>
+<h3 id="第64套">第64套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/64.jpg" />
+</div>
+<h3 id="第65套">第65套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/65.jpg" />
+</div>
+<h3 id="第66套">第66套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/66.jpg" />
+</div>
+<h3 id="第67套">第67套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/67.jpg" />
+</div>
+<h3 id="第68套">第68套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/68.jpg" />
+</div>
+<h3 id="第69套">第69套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/69.jpg" />
+</div>
+<h3 id="第70套">第70套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/70.jpg" />
+</div>
+<h3 id="第71套">第71套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/71.jpg" />
+</div>
+<h3 id="第72套">第72套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/72.jpg" />
+</div>
+<h3 id="第73套">第73套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/73.jpg" />
+</div>
+<h3 id="第74套">第74套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/74.jpg" />
+</div>
+<h3 id="第75套">第75套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/75.jpg" />
+</div>
+<h3 id="第76套">第76套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/76.jpg" />
+</div>
+<h3 id="第77套">第77套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/77.jpg" />
+</div>
+<h3 id="第78套">第78套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/78.jpg" />
+</div>
+<h3 id="第79套">第79套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/79.jpg" />
+</div>
+<h3 id="第80套">第80套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/80.jpg" />
+</div>
+<h3 id="第81套">第81套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/81.jpg" />
+</div>
+<h3 id="第82套">第82套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/82.jpg" />
+</div>
+<h3 id="第83套">第83套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/83.jpg" />
+</div>
+<h3 id="第84套">第84套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/84.jpg" />
+</div>
+<h3 id="第85套">第85套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/85.jpg" />
+</div>
+<h3 id="第86套">第86套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/86.jpg" />
+</div>
+<h3 id="第87套">第87套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/87.jpg" />
+</div>
+<h3 id="第88套">第88套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/88.jpg" />
+</div>
+<h3 id="第89套">第89套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/89.jpg" />
+</div>
+<h3 id="第90套">第90套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/90.jpg" />
+</div>
+<h3 id="第91套">第91套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/91.jpg" />
+</div>
+<h3 id="第92套">第92套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/92.jpg" />
+</div>
+<h3 id="第93套">第93套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/93.jpg" />
+</div>
+<h3 id="第94套">第94套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/94.jpg" />
+</div>
+<h3 id="第95套">第95套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/95.jpg" />
+</div>
+<h3 id="第96套">第96套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/96.jpg" />
+</div>
+<h3 id="第97套">第97套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/97.jpg" />
+</div>
+<h3 id="第98套">第98套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/98.jpg" />
+</div>
+<h3 id="第99套">第99套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/99.jpg" />
+</div>
+<h3 id="第100套">第100套</h3>
+
+<div align="center">
+<img src="/static/img/PPT/100.jpg" />
+</div>
+
+</div>
+				<footer style="margin-top: 50px !important;"><meta itemprop="dateModified" content="2019-04-09T00:00:00+08:00"><div class="article-license"><div class="m-license"><div class="clearfix"><p>本文遵守 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 许可协议。</p><a class="license" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+      <img alt="Creative Commons License" src="/assets/images/license-cc4.png" />
+    </a><p>欢迎转载，转载需注明出处，且禁止用于商业目的。</p>
+  </div>
+</div></div>
+				</footer>
+			</article>
+			<div class="article-previous-next clearfix"><div class="article-next"><span>下篇</span><a href="/links/2019/04/08/财务会计基础.html">财务会计基础术语表</a></div></div></div>
+	</div>
+</div></div>
+      </div>
+    </div><div class="m-page-footer js-page-footer">
+  <div class="main">
+    <aside><div class="follow-me"><ul itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Taoer">
+    <link itemprop="url" href="http://localhost:4000/"><li title="在 Github 上关注我。">
+        <div class="floating-action-round-button github">
+          <a itemprop="sameAs" href="https://github.com/Taoer1996" target="_blank">
+            <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+          </a>
+        </div>
+      </li></ul></div>
+</aside>
+    <footer class="site-info">
+      <p>© Taoer's blog 2018</p>
+      <p>Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a succinct theme for blogging." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.</p>
+    </footer>
+  </div>
+</div><script>
+  (function () {
+    var root = document.body
+    function classnames(classes) {
+      var i, cur, _classes = '';
+      if (window.isString(classes)) {
+        _classes =  classes;
+      } else if (window.isArray(classes)) {
+        for (i = 0; i < classes.length; i++) {
+          cur = classes[i];
+          if (window.isString(cur)) {
+            _classes = _classes.concat(_classes ? ' ' + cur : cur);
+          }
+        }
+      } else {
+        return '';
+      }
+      return _classes;
+    }
+    function addClass(dom, classname) {
+      dom.setAttribute('class', classnames([dom.getAttribute('class'), classname]));
+    }
+    if (window.hasEvent('touchstart')) {
+      addClass(root, 'is-touch');
+      document.addEventListener("touchstart", function(){}, false);
+    } else {
+      addClass(root, 'not-touch');
+    }
+  })();
+</script><script>
+  (function() {
+    function scrollAnimateTo(destination, duration, callback) {
+      var $body = $('html, body'), bodyScrollTop = $body.scrollTop();
+      if(bodyScrollTop === destination) { return; }
+      $body.animate({ scrollTop: destination }, duration, callback);
+    }
+    window.scrollTopAnchor = function(anchor, callback) {
+      scrollAnimateTo($(anchor).offset().top, 400, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+  })();
+  window.Lazyload.js('https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', function() {
+    var $articleContent = $('.m-post, .m-page').find('.m-article-content'), $this;
+    $articleContent.children('.highlight').each(function() {
+      $this = $(this);
+      $this.attr('data-lang', $this.find('code').attr('data-lang'));
+    });
+
+    $articleContent.children('h1, h2, h3, h4, h5, h6').each(function() {
+      $this = $(this);
+      $this.append($('<a class="anchor" aria-hidden="true"></a>').html('<svg fill="#000000" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>'));
+    });
+    $articleContent.on('click', '.anchor', function() {
+      window.scrollTopAnchor('#' + $(this).parent().attr('id'));
+    });
+  });
+</script><!---->
+<!-- 将 _toc_selectors置空，从而去除目录 --><script>
+  window.Lazyload.js('https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', function() {
+    var $window = $(window);
+    var $pageStage = $('.js-page-stage');
+    var $pageMain = $('.js-main');
+    var $pageFooter = $('.js-page-footer');
+    var $articleContent = $('.js-article-content');
+    var $articleAside = $('.js-article-aside');
+    var $toc = $('.js-toc');
+    var $col2 = $('.js-col-2');
+    var hasTitle = $articleContent.find('').length > 0;
+    function asideSticky() {
+      return $col2.css('display') !== 'none' && $pageStage.hasClass('has-toc');
+    }
+    function setTocClass() {
+      if (hasTitle) {
+        !$pageStage.hasClass('has-toc') && $pageStage.addClass('has-toc');
+      }
+    }
+    function setAsideTOC() {
+      var asideTop, asideLeft, scrollBottom, asideBottomTop, lastScrollTop;
+      function init() {
+        var asideOffset = $articleAside.offset();
+        var footerOffset = $pageFooter.offset();
+        var mainOffset = $pageMain.offset();
+        asideTop = mainOffset.top;
+        asideHeight = $toc.outerHeight() + parseInt($articleAside.css('padding-top'), 10) + parseInt($articleAside.css('padding-bottom'), 10);
+        asideLeft = mainOffset.left + $pageMain.outerWidth() - $articleAside.outerWidth() - parseInt($pageMain.css('padding-right'), 10);
+        scrollBottom = footerOffset.top - asideHeight;
+        asideBottomTop = scrollBottom - mainOffset.top;
+      }
+      function setAside(force) {
+        force !== true && (force = false);
+        var scrollTop = $window.scrollTop();
+        if (scrollTop >= asideTop && scrollTop <= scrollBottom) {
+          (!force && lastScrollTop >= asideTop && lastScrollTop <= scrollBottom) ||
+          $articleAside.addClass('fixed').css({
+            left: asideLeft + 'px',
+            top: 0
+          });
+        } else if (scrollTop < asideTop) {
+          (!force && lastScrollTop < asideTop) ||
+          $articleAside.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+        } else {
+          (!force && lastScrollTop > scrollBottom) ||
+          $articleAside.removeClass('fixed').css({
+            left: 0,
+            top: asideBottomTop + 'px'
+          });
+        }
+        lastScrollTop = scrollTop;
+      }
+      asideSticky() && (init(), setAside());
+      $window.on('scroll', function() {
+        asideSticky() && setAside();
+      });
+      $window.on('resize', window.throttle(function() {
+        setTocClass();
+        asideSticky() && (init(), setAside(true));
+      }, 100));
+      setTimeout(init, 4000);
+    }
+    function toc() {
+      var $tocUl = $('<ul></ul>'), $tocLi, $headings = $articleContent.find(''), headingsTop = [],
+        scrolling, activeLast, activeCur, rendered = false;
+      function init() {
+        $headings.each(function() {
+          headingsTop.push(Math.floor($(this).offset().top));
+        });
+      }
+      function setActiveHeading(element, disabled) {
+        var scrollTop = $window.scrollTop(), i;
+        if (disabled || headingsTop.length < 1) { return; }
+        if (element) {
+          activeCur = element;
+        } else {
+          for (i = 0; i < headingsTop.length; i++) {
+            if (scrollTop >= headingsTop[i]) {
+              activeCur = $tocLi.eq(i);
+            } else {
+              activeCur || (activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        activeLast && activeLast.removeClass('toc-active');
+        (activeLast = activeCur).addClass('toc-active');
+      }
+      function render() {
+        $toc.append($tocUl);
+        $headings.each(function() {
+          var $this = $(this);
+          $tocUl.append($('<li></li>').addClass('toc-' + $this.prop("tagName").toLowerCase())
+            .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+        });
+        $tocLi = $tocUl.children('li');
+        $tocUl.on('click', 'a', function(e) {
+          e.preventDefault();
+          var $this = $(this);
+          scrolling = true;
+          setActiveHeading($this.parent());
+          window.scrollTopAnchor($this.attr('href'), function() {
+            scrolling = false;
+          });
+        });
+        rendered = true;
+      }
+      asideSticky() && (render(), $window.on('load', function() {
+        setTimeout(function() {
+          init();
+          setActiveHeading(null, scrolling);
+        }, 1000);
+      }));
+      $window.on('resize', window.throttle(function() {
+        if (asideSticky()) {
+          rendered || render();
+          init();
+          setActiveHeading(null, scrolling);
+        }
+      }));
+      $window.on('scroll', function() {
+        asideSticky() && setActiveHeading(null, scrolling);
+      });
+    }
+    setTocClass();
+    toc();
+    setTimeout(function() {
+      setAsideTOC();
+    }, 1000);
+  });</script></body>
+</html>
